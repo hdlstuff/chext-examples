@@ -1,0 +1,125 @@
+{
+  "name" : "Example1",
+  "ports" : [
+    {
+      "name" : "clock",
+      "direction" : "input",
+      "kind" : "clock",
+      "sensitivity" : "clockRising",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "reset",
+      "direction" : "input",
+      "kind" : "reset",
+      "sensitivity" : "resetActiveHigh",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "",
+      "args" : {
+        
+      }
+    }
+  ],
+  "interfaces" : [
+    {
+      "name" : "io_sourceA",
+      "role" : "source",
+      "kind" : "readyValid[SourceData]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "io_sourceB",
+      "role" : "source",
+      "kind" : "readyValid[SourceData]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "io_sourceSelect",
+      "role" : "source",
+      "kind" : "readyValid[SourceSelect]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "io_sink",
+      "role" : "sink",
+      "kind" : "readyValid[Sink]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    }
+  ],
+  "args" : {
+    "encodedDataList" : {
+      "typeName" : "chext.util.EncodedDataList",
+      "obj" : {
+        "seq" : [
+          {
+            "name" : "SourceData",
+            "entries" : [
+              {
+                "path" : "",
+                "width" : 32,
+                "tpe" : "UInt<32>"
+              }
+            ]
+          },
+          {
+            "name" : "SourceSelect",
+            "entries" : [
+              {
+                "path" : "sourceId",
+                "width" : 1,
+                "tpe" : "UInt<1>"
+              },
+              {
+                "path" : "count",
+                "width" : 8,
+                "tpe" : "UInt<8>"
+              }
+            ]
+          },
+          {
+            "name" : "Sink",
+            "entries" : [
+              {
+                "path" : "",
+                "width" : 32,
+                "tpe" : "UInt<32>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

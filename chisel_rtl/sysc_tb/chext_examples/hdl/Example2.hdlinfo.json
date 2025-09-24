@@ -1,0 +1,105 @@
+{
+  "name" : "Example2",
+  "ports" : [
+    {
+      "name" : "clock",
+      "direction" : "input",
+      "kind" : "clock",
+      "sensitivity" : "clockRising",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "reset",
+      "direction" : "input",
+      "kind" : "reset",
+      "sensitivity" : "resetActiveHigh",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "",
+      "args" : {
+        
+      }
+    }
+  ],
+  "interfaces" : [
+    {
+      "name" : "source",
+      "role" : "source",
+      "kind" : "readyValid[Source]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "sink",
+      "role" : "sink",
+      "kind" : "readyValid[Sink]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    }
+  ],
+  "args" : {
+    "encodedDataList" : {
+      "typeName" : "chext.util.EncodedDataList",
+      "obj" : {
+        "seq" : [
+          {
+            "name" : "Source",
+            "entries" : [
+              {
+                "path" : "data",
+                "width" : 8,
+                "tpe" : "UInt<8>"
+              },
+              {
+                "path" : "last",
+                "width" : 1,
+                "tpe" : "Bool"
+              }
+            ]
+          },
+          {
+            "name" : "Sink",
+            "entries" : [
+              {
+                "path" : "data",
+                "width" : 8,
+                "tpe" : "UInt<8>"
+              },
+              {
+                "path" : "length",
+                "width" : 32,
+                "tpe" : "UInt<32>"
+              },
+              {
+                "path" : "last",
+                "width" : 1,
+                "tpe" : "Bool"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "name" : "Example3",
+  "ports" : [
+    {
+      "name" : "clock",
+      "direction" : "input",
+      "kind" : "clock",
+      "sensitivity" : "clockRising",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "reset",
+      "direction" : "input",
+      "kind" : "reset",
+      "sensitivity" : "resetActiveHigh",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "",
+      "args" : {
+        
+      }
+    }
+  ],
+  "interfaces" : [
+    {
+      "name" : "M_AXI",
+      "role" : "master",
+      "kind" : "axi4",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "config" : {
+          "typeName" : "chext.amba.axi4.Config",
+          "obj" : {
+            "wId" : 6,
+            "wAddr" : 64,
+            "wData" : 64,
+            "read" : true,
+            "write" : true,
+            "lite" : false,
+            "hasLock" : true,
+            "hasCache" : true,
+            "hasProt" : true,
+            "hasQos" : true,
+            "hasRegion" : true,
+            "axi3Compat" : false,
+            "wUserAR" : 0,
+            "wUserR" : 0,
+            "wUserAW" : 0,
+            "wUserW" : 0,
+            "wUserB" : 0
+          }
+        }
+      }
+    },
+    {
+      "name" : "sourceTask",
+      "role" : "source",
+      "kind" : "readyValid[Task]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "sinkResult",
+      "role" : "sink",
+      "kind" : "readyValid[Result]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    }
+  ],
+  "args" : {
+    "encodedDataList" : {
+      "typeName" : "chext.util.EncodedDataList",
+      "obj" : {
+        "seq" : [
+          {
+            "name" : "Task",
+            "entries" : [
+              {
+                "path" : "ptrArray",
+                "width" : 64,
+                "tpe" : "UInt<64>"
+              },
+              {
+                "path" : "uLength",
+                "width" : 64,
+                "tpe" : "UInt<64>"
+              },
+              {
+                "path" : "ptrResult",
+                "width" : 64,
+                "tpe" : "UInt<64>"
+              }
+            ]
+          },
+          {
+            "name" : "Result",
+            "entries" : [
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

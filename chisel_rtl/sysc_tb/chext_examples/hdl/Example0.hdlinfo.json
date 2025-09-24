@@ -1,0 +1,110 @@
+{
+  "name" : "Example0",
+  "ports" : [
+    {
+      "name" : "clock",
+      "direction" : "input",
+      "kind" : "clock",
+      "sensitivity" : "clockRising",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "reset",
+      "direction" : "input",
+      "kind" : "reset",
+      "sensitivity" : "resetActiveHigh",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "",
+      "args" : {
+        
+      }
+    }
+  ],
+  "interfaces" : [
+    {
+      "name" : "io_source",
+      "role" : "source",
+      "kind" : "readyValid[Source]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "io_sink0",
+      "role" : "sink",
+      "kind" : "readyValid[Sink0]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "io_sink1",
+      "role" : "sink",
+      "kind" : "readyValid[Sink1]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    }
+  ],
+  "args" : {
+    "encodedDataList" : {
+      "typeName" : "chext.util.EncodedDataList",
+      "obj" : {
+        "seq" : [
+          {
+            "name" : "Source",
+            "entries" : [
+              {
+                "path" : "",
+                "width" : 32,
+                "tpe" : "UInt<32>"
+              }
+            ]
+          },
+          {
+            "name" : "Sink0",
+            "entries" : [
+              {
+                "path" : "",
+                "width" : 32,
+                "tpe" : "UInt<32>"
+              }
+            ]
+          },
+          {
+            "name" : "Sink1",
+            "entries" : [
+              {
+                "path" : "",
+                "width" : 32,
+                "tpe" : "UInt<32>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
