@@ -1,6 +1,7 @@
 package chext_examples
 
 import chisel3._
+import chisel3.experimental.prefix
 
 import chext.{elastic => e}
 import e.ConnectOp._
@@ -79,8 +80,6 @@ class Example3_Basic(cfg: Example3_Config) extends Module {
     val transform0 = new e.Transform(st.sinkResult, sinkResult) {}
   }
 }
-
-import chext.naming.prefix
 
 class Example3(cfg: Example3_Config) extends Module with chext.TestBenchTop {
   import cfg._
