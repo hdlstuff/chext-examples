@@ -12,8 +12,8 @@ lazy val root = (project in file("."))
     name := "chext_examples",
     libraryDependencies ++= Seq(
       "org.chipsalliance" %% "chisel" % chiselVersion,
-      "hdlstuff" %% "hdlinfo" % "0.1.0",
-      "hdlstuff" %% "chext" % "0.2.1",
+      "hdlstuff" %% "hdlstuff_hdlinfo" % "0.1.0",
+      "hdlstuff" %% "hdlstuff_chext" % "0.2.3",
       "io.circe" %% "circe-core" % circeVersion,
       "io.circe" %% "circe-generic" % circeVersion,
       "io.circe" %% "circe-parser" % circeVersion

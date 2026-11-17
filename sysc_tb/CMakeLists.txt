@@ -48,9 +48,9 @@ function(generate_tb)
         fmt::fmt
         Boost::boost
         Boost::endian
-        hdlscw::hdlscw
-        hdlstuff::hdlstuff_hal
-        chext::chext_test
+        hdlstuff::hdlscw
+        hdlstuff::hal
+        hdlstuff::chext_test
     )
 
     foreach(COMMON_SRC IN LISTS COMMON_SRCS)
